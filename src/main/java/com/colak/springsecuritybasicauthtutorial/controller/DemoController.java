@@ -1,5 +1,6 @@
 package com.colak.springsecuritybasicauthtutorial.controller;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +11,7 @@ public class DemoController {
 
     // http://localhost:8080/api/v1/secured/hello-world
     @GetMapping(value = "/secured/hello-world")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String securedCall() {
         return "hello world secured!!";
     }
