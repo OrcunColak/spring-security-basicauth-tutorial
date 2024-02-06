@@ -25,6 +25,16 @@ class DemoControllerTest {
     }
 
     @Test
+    void whenAdminTriesToAccessByEmail() {
+        String url = "/api/v1/secured/hello-world";
+        ResponseEntity<String> responseEntity = testRestTemplate
+                .withBasicAuth("orcun@example.com", "password")
+                .getForEntity(url, String.class);
+
+        Assertions.assertEquals("hello world secured!!", responseEntity.getBody());
+    }
+
+    @Test
     void whenUserTriesToAccess_thenForbidden() {
         String url = "/api/v1/secured/hello-world";
         ResponseEntity<String> responseEntity = testRestTemplate

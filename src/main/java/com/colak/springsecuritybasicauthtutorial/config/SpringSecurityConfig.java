@@ -83,6 +83,11 @@ public class SpringSecurityConfig {
     }
 
     @Bean
+    public CustomerUserDetailsService customerUserDetailsService() {
+        return new CustomerUserDetailsService();
+    }
+
+    @Bean
     // This is not a bean. I am keeping it as reference only
     public InMemoryUserDetailsManager inMemoryUserDetailsManager() {
         String password = passwordEncoder().encode("password");

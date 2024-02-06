@@ -4,16 +4,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.provisioning.UserDetailsManager;
 
 import java.util.List;
 
 public class CompositeUserDetailsService implements UserDetailsService {
 
-    private List<UserDetailsManager> userDetailsServiceList;
+    private List<UserDetailsService> userDetailsServiceList;
 
     @Autowired
-    public void setUserDetailsServiceList(List<UserDetailsManager> userDetailsServiceList) {
+    public void setUserDetailsServiceList(List<UserDetailsService> userDetailsServiceList) {
         this.userDetailsServiceList = userDetailsServiceList;
     }
 
