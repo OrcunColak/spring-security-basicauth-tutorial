@@ -16,11 +16,11 @@ CREATE UNIQUE INDEX ix_auth_username ON authorities (username,authority);
 INSERT INTO users (username, password, enabled) VALUES
     ('admin', '$2a$10$8fwn0LUKql6wTzJHO2QoQ.Nd.59eIyFwaucgBJoiZ/T5SqrqNmyBm', TRUE);
 
-INSERT INTO users (username, password, enabled) VALUES
-    ('user', '$2a$10$8fwn0LUKql6wTzJHO2QoQ.Nd.59eIyFwaucgBJoiZ/T5SqrqNmyBm', TRUE);
-
 INSERT INTO authorities (username, authority)
 VALUES ('admin', 'ROLE_ADMIN');
 
-INSERT INTO authorities (username, authority)
-VALUES ('user', 'ROLE_USER');
+--INSERT INTO users (username, password, enabled) VALUES
+--    ('user', '$2a$10$8fwn0LUKql6wTzJHO2QoQ.Nd.59eIyFwaucgBJoiZ/T5SqrqNmyBm', TRUE);
+
+--INSERT INTO authorities (username, authority)
+--VALUES ('user', 'ROLE_USER');
