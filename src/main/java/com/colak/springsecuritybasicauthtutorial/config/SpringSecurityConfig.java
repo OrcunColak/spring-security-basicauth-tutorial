@@ -20,8 +20,6 @@ import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 import javax.sql.DataSource;
 
-import static org.springframework.security.web.util.matcher.AntPathRequestMatcher.antMatcher;
-
 @EnableWebSecurity
 @Configuration
 public class SpringSecurityConfig {
@@ -31,17 +29,16 @@ public class SpringSecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(
                         customizer -> {
-                            customizer.requestMatchers(antMatcher("/h2-console/*")).permitAll();
-                            customizer.requestMatchers("/api/v1/secured/**").authenticated();
-                            customizer.anyRequest().permitAll();
+                            customizer.requestMatchers("/api/v1/secured/**").hasRole("ADMIN")
+                            .anyRequest().permitAll();
                         })
                 .httpBasic(Customizer.withDefaults());
 
         enableH2Console(http);
-        http.headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable));
 
         http.csrf(csrf -> csrf
                         .ignoringRequestMatchers("/api/v1/secured/**")
+                        // This is required for H2
                         .ignoringRequestMatchers("/h2-console/*")
                         .csrfTokenRepository(new CookieCsrfTokenRepository())
                 )
