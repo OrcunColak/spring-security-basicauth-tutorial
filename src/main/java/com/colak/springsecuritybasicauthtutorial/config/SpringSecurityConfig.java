@@ -77,9 +77,9 @@ public class SpringSecurityConfig {
     public UserDetailsManager userDetailsManager(DataSource dataSource) {
         JdbcUserDetailsManager jUserDetailsManager = new JdbcUserDetailsManager(dataSource);
 
-        jUserDetailsManager.setUsersByUsernameQuery("SELECT username, password, enabled FROM users WHERE username = ?;");
-
-        jUserDetailsManager.setAuthoritiesByUsernameQuery("SELECT username, authority FROM authorities WHERE username = ?;");
+        // jUserDetailsManager.setUsersByUsernameQuery("SELECT username, password, enabled FROM users WHERE username = ?;");
+        //
+        // jUserDetailsManager.setAuthoritiesByUsernameQuery("SELECT username, authority FROM authorities WHERE username = ?;");
 
         return jUserDetailsManager;
     }
