@@ -43,4 +43,14 @@ class DemoControllerTest {
 
         Assertions.assertEquals(HttpStatus.FORBIDDEN, responseEntity.getStatusCode());
     }
+
+    @Test
+    void whenUserTriesToAccess_CustomRule() {
+        String url = "/api/v1/secured/hello-world/user";
+        ResponseEntity<String> responseEntity = testRestTemplate
+                .withBasicAuth("user", "password")
+                .getForEntity(url, String.class);
+
+        Assertions.assertEquals("hello world secured!! for user", responseEntity.getBody());
+    }
 }
