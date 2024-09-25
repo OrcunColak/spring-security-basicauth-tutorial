@@ -1,4 +1,4 @@
-package com.colak.springsecuritybasicauthtutorial.controller;
+package com.colak.springtutorial.controller;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

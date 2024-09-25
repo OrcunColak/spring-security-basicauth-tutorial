@@ -1,4 +1,4 @@
-package com.colak.springsecuritybasicauthtutorial.controller;
+package com.colak.springtutorial.controller;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;

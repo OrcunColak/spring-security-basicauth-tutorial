@@ -1,4 +1,4 @@
-package com.colak.springsecuritybasicauthtutorial.jpa;
+package com.colak.springtutorial.jpa;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;

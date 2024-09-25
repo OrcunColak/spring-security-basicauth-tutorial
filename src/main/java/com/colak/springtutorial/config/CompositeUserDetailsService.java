@@ -1,4 +1,4 @@
-package com.colak.springsecuritybasicauthtutorial.config;
+package com.colak.springtutorial.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

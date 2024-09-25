@@ -1,4 +1,4 @@
-package com.colak.springsecuritybasicauthtutorial.controller;
+package com.colak.springtutorial.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;

@@ -1,6 +1,6 @@
-package com.colak.springsecuritybasicauthtutorial.repository;
+package com.colak.springtutorial.repository;
 
-import com.colak.springsecuritybasicauthtutorial.jpa.Customer;
+import com.colak.springtutorial.jpa.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
